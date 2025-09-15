@@ -7,7 +7,7 @@ def main():
         return (width * 2) + (height * 2)
     choice = "Y"
     while choice == "Y":
-        width = int(input("enter width: "))
+        width = int(input("Enter width: "))
         height = int(input("Enter height: "))
         if isValid(width, height):
             print("This is a valid rectangle.")
