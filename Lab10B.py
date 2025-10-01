@@ -8,12 +8,13 @@ def main():
             self.breed = breed
         def bark(self):
             print("Woof! Woof!")
-        def renamed(self, newName):
-            self.name = newName
-        def eat(self, food):
-            self.weight = self.weight + food
-    def dogDesc(age, weight, name, furColor, breed):
-        print(f"{name} is a {age} year old {furColor} {breed} that weighs {weight} lbs.")
+        def rename(self):
+            self.name = input(f"{self.name} isn’t a very good name. What should they be renamed to: ")
+        def eat(self):
+            self.weight = self.weight + float(input(f"{self.name} is hungry, how much should he eat: "))
+        def desc(self):
+            print(f"{self.name} is a {self.age} year old {self.furColor} {self.breed} that weighs {self.weight} lbs.")
+
     print("You are about to create a dog.")
     age = int(input("How old is the dog: "))
     weight = float(input("How much does the dog weigh: "))
@@ -21,13 +22,10 @@ def main():
     furColor = input("What color is the dog: ")
     breed = input("What breed is the dog: ")
     dog1 = Dog(age, weight, name, furColor, breed)
-    dogDesc(dog1.age, dog1.weight, dog1.name, dog1.furColor, dog1.breed)
+    dog1.desc()
     dog1.bark()
-    food = float(input(f"{dog1.name} is hungry, how much should he eat: "))
-    newName = input(f"{dog1.name} isn't a very good name. What should they be renamed to: ")
-    dog1.eat(food)
-    dog1.renamed(newName)
-    dogDesc(dog1.age, dog1.weight, dog1.name, dog1.furColor, dog1.breed)
-
+    dog1.eat()
+    dog1.rename()
+    dog1.desc()
 if __name__ == "__main__":
     main()
